@@ -1,0 +1,10 @@
+.env
+google-services.json
+ios/Runner/GoogleService-Info.plist
+*.iml
+.gradle/
+.idea/
+.dart_tool/
+build/
+*.lock
+pubspec.lock
