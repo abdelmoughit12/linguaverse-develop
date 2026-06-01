@@ -1,163 +1,325 @@
-# LinguaVerse 🌍
+# 🌍 LinguaVerse
 
-> Application mobile d'apprentissage des langues — Flutter/Dart  
-> ENSIAS Taroudant · Module Développement Mobile & Metaverse · 2025–2026
+### Learn Languages Smarter with AI, Gamification & Real-Time Interaction
 
-## 👥 Équipe
-
-| Membre | Rôle | Modules | Branches |
-|---|---|---|---|
-| Hiba EL OUAFI | Auth Lead · IA | M1 Auth · M8 IA Quiz | feature/auth-onboarding · feature/ai-quiz |
-| Zineb BOUGHEDDA | SRS · Gamification | M2 Leçons · M7 Gamification | feature/lessons-srs · feature/gamification |
-| Abdelmoughit MOURADI | Quiz · Firebase | M5 Quiz · M6 Duel | feature/quiz-five-types · feature/duel-realtime |
-| Achraf MOUASIS | Audio · ML | M3 TTS · M4 STT | feature/audio-tts-service · feature/pronunciation |
-
-**Encadrant :** Pr. Latifa RASSAM
+<p align="center">
+  <img src="https://img.shields.io/badge/Flutter-3.22+-02569B?style=for-the-badge&logo=flutter" />
+  <img src="https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart" />
+  <img src="https://img.shields.io/badge/Firebase-Backend-FFCA28?style=for-the-badge&logo=firebase" />
+  <img src="https://img.shields.io/badge/Gemini-AI%20Powered-8E75FF?style=for-the-badge" />
+</p>
 
 ---
 
-## 🚀 Démarrage rapide (5 minutes)
+## 📱 About The Project
 
-### 1. Cloner le projet
-```bash
-git clone https://github.com/EQUIPE/linguaverse.git
-cd linguaverse
-```
+**LinguaVerse** is an AI-powered mobile application designed to make language learning more interactive, immersive, and engaging.
 
-### 2. Installer les dépendances
-```bash
-flutter pub get
-cd ios && pod install && cd ..
-```
+Built with **Flutter**, the platform combines:
 
-### 3. Configurer Firebase
+* 🎯 Smart quizzes
+* 🤖 AI-generated exercises
+* 🎮 Gamification mechanics
+* 🔊 Speech & pronunciation tools
+* ⚡ Real-time interactions
+* ☁️ Firebase cloud services
 
-Pour que les services Firebase fonctionnent correctement (Auth, base de données), chaque développeur doit configurer les clés sur son environnement local :
-
-**Pour Android :**
-1. Télécharger ou récupérer le fichier `google-services.json` du projet.
-2. Le placer directement dans le dossier `android/app/` :
-```bash
-cp chemin/vers/google-services.json android/app/
-```
-
-**Pour iOS :**
-1. Télécharger ou récupérer le fichier `GoogleService-Info.plist`.
-2. Le placer dans le dossier `ios/Runner/` :
-```bash
-cp chemin/vers/GoogleService-Info.plist ios/Runner/
-```
-
-> **⚠️ ATTENTION :** Ces fichiers contiennent les clés privées du projet. Ils ne doivent **absolument jamais** être inclus dans les commits (ils sont déjà stipulés dans le `.gitignore`).
-
-### 4. Configurer les clés API
-```bash
-cp .env.example .env
-# Éditer .env et remplir GOOGLE_API_KEY (pour Gemini)
-```
-
-### 5. Lancer l'application
-```bash
-flutter run
-flutter run -d 'iPhone 15 Pro'
-flutter run -d chrome
-```
+The project was developed as part of the **Mobile Development & Metaverse Module** at **ENSIAS Taroudant (2025–2026)**.
 
 ---
 
-## 🌟 Dernières Mises à Jour (Réalisées)
+# ✨ Key Features
 
-*   **Migration IA :** Passage de Claude 3 à **Google Gemini 1.5 Flash** pour la génération gratuite et rapide des quiz.
-*   **Moteur de Jeu "AI Quiz" :** Création d'une interface de jeu interactive indépendante avec feedback immédiat, animations, et timer dynamique (30 secondes par question).
-*   **Gamification & XP :** Calcul automatique de l'XP à la fin des quiz (+10 XP/bonne réponse, bonus parfait de +50 XP) avec synchronisation locale (SQLite) et distante (Firestore).
-*   **Sécurité et Auth :** Intégration complète de la fonctionnalité **"Mot de passe oublié"** (envoi d'e-mails via Firebase) et ajout d'un **Bouton de Déconnexion** fluide sur l'écran d'accueil.
-*   **Robustesse :** Gestion de l'erreur 503 (serveurs Gemini surchargés) avec message convivial, et renforcement extrême du parsing JSON via des prompts explicites d'échappement des guillemets.
+## 🤖 AI Quiz Engine
+
+Generate dynamic quizzes using **Google Gemini 1.5 Flash**.
+
+### Features
+
+* AI-generated questions
+* Instant feedback system
+* Countdown timer
+* Animated interactions
+* Adaptive difficulty
+* Robust JSON parsing
+* Error handling for overloaded AI services
 
 ---
 
-## 🏗️ Architecture
+## 🎮 Gamification System
 
-```
+Make learning addictive and motivating.
+
+### Includes
+
+* XP points system
+* Perfect score bonuses
+* Progress tracking
+* Learning streaks
+* SQLite local synchronization
+* Firestore cloud sync
+
+---
+
+## 🔐 Authentication & Security
+
+Powered by Firebase Authentication.
+
+### Implemented
+
+* Email/password login
+* Secure registration
+* Password reset via email
+* Session persistence
+* Logout management
+
+---
+
+## 🔊 Audio & Pronunciation
+
+Improve speaking and listening skills.
+
+### Technologies
+
+* Text-To-Speech (TTS)
+* Speech-To-Text (STT)
+* Pronunciation challenge system
+
+---
+
+## 🧠 Smart Learning System
+
+Spaced Repetition System (SRS) for optimized memorization.
+
+### Benefits
+
+* Better long-term retention
+* Personalized review scheduling
+* Adaptive learning flow
+
+---
+
+# 🏗️ Architecture
+
+The project follows:
+
+* **MVVM Architecture**
+* **Clean Architecture Principles**
+* Modular feature-based structure
+
+```bash
 lib/
-├── main.dart
-├── app.dart
-├── router.dart
-├── core/services/
-│   ├── audio_service.dart
-│   ├── database_helper.dart
-│   ├── srs_service.dart
-│   └── claude_api_service.dart
+├── core/
+│   ├── services/
+│   ├── utils/
+│   └── constants/
+│
 ├── features/
 │   ├── auth/
 │   ├── lessons/
 │   ├── quiz/
-│   ├── gamification/
 │   ├── ai_quiz/
-│   └── ar/
-└── shared/
-    ├── widgets/
-    ├── theme/
-    └── utils/
-```
-
-**Pattern :** MVVM + Clean Architecture
-
----
-
-## 🌿 Branches Git
-
-```
-main
-  └── develop
-        ├── feature/auth-onboarding
-        ├── feature/ai-quiz
-        ├── feature/lessons-srs
-        ├── feature/gamification
-        ├── feature/quiz-five-types
-        ├── feature/duel-realtime
-        ├── feature/audio-tts-service
-        └── feature/pronunciation-challenge
+│   ├── gamification/
+│   ├── duel/
+│   └── pronunciation/
+│
+├── shared/
+│   ├── widgets/
+│   ├── theme/
+│   └── components/
+│
+├── router.dart
+├── app.dart
+└── main.dart
 ```
 
 ---
 
-## 📋 Commandes quotidiennes
+# ⚙️ Tech Stack
+
+| Category         | Technology        |
+| ---------------- | ----------------- |
+| Framework        | Flutter 3.22+     |
+| Language         | Dart              |
+| State Management | Riverpod          |
+| Navigation       | Go Router         |
+| Backend          | Firebase          |
+| Local Database   | SQLite (sqflite)  |
+| AI Engine        | Google Gemini API |
+| TTS              | flutter_tts       |
+| STT              | speech_to_text    |
+| Charts           | fl_chart          |
+| AR               | ar_flutter_plugin |
+| ML               | Google ML Kit     |
+
+---
+
+# 🚀 Getting Started
+
+## 1️⃣ Clone Repository
 
 ```bash
-flutter analyze
-flutter test
-dart format lib/
+git clone https://github.com/YOUR_USERNAME/linguaverse.git
+cd linguaverse
+```
+
+---
+
+## 2️⃣ Install Dependencies
+
+```bash
 flutter pub get
 ```
 
----
+For iOS:
 
-## ⚠️ Règles importantes
-
-1. Ne jamais committer `.env`, `google-services.json`, `GoogleService-Info.plist`
-2. sqflite uniquement pour la DB locale
-3. Travailler uniquement dans `lib/features/<ton_module>/`
-4. Toujours rebase sur develop avant PR
-5. Conventional commits obligatoires : `feat|fix|chore|test|docs(scope): message`
+```bash
+cd ios
+pod install
+cd ..
+```
 
 ---
 
-## 📦 Stack technique
+## 3️⃣ Firebase Configuration
 
-| Catégorie | Technologie | Version |
-|---|---|---|
-| Framework | Flutter / Dart | 3.22+ |
-| State | flutter_riverpod | 2.5+ |
-| Navigation | go_router | 14+ |
-| DB locale | sqflite | 2.3+ |
-| Auth | firebase_auth | Latest |
-| TTS | flutter_tts | 4.2+ |
-| STT | speech_to_text | 7.0+ |
-| AR | ar_flutter_plugin | 0.7.3+ |
-| ML | google_mlkit_object_detection | 0.12+ |
-| IA | Google Gemini API (gemini-1.5-flash) | — |
-| Charts | fl_chart | 0.69+ |
+### Android
+
+Place:
+
+```bash
+google-services.json
+```
+
+inside:
+
+```bash
+android/app/
+```
+
+### iOS
+
+Place:
+
+```bash
+GoogleService-Info.plist
+```
+
+inside:
+
+```bash
+ios/Runner/
+```
+
+⚠️ Never commit these files.
 
 ---
 
-*LinguaVerse — ENSIAS Taroudant · Pr. Latifa RASSAM · 2025–2026*
+## 4️⃣ Environment Variables
+
+```bash
+cp .env.example .env
+```
+
+Add your Gemini API key:
+
+```env
+GOOGLE_API_KEY=YOUR_KEY
+```
+
+---
+
+## 5️⃣ Run The App
+
+```bash
+flutter run
+```
+
+Specific devices:
+
+```bash
+flutter run -d chrome
+flutter run -d "iPhone 15 Pro"
+```
+
+---
+
+# 🌿 Git Workflow
+
+```bash
+main
+ └── develop
+      ├── feature/auth
+      ├── feature/ai-quiz
+      ├── feature/gamification
+      ├── feature/pronunciation
+      ├── feature/duel
+      └── feature/lessons
+```
+
+---
+
+# 📋 Development Rules
+
+✅ Conventional commits only
+
+```bash
+feat(auth): add login validation
+fix(quiz): correct timer bug
+```
+
+✅ Always branch from `develop`
+
+✅ Rebase before Pull Request
+
+❌ Never commit:
+
+* `.env`
+* `google-services.json`
+* `GoogleService-Info.plist`
+
+---
+
+# 👨‍💻 Team
+
+| Member               | Role                     |
+| -------------------- | ------------------------ |
+| Hiba EL OUAFI        | Authentication & AI      |
+| Zineb BOUGHEDDA      | Lessons & Gamification   |
+| Abdelmoughit MOURADI | Quiz & Firebase          |
+| Achraf MOUASIS       | Audio & Machine Learning |
+
+### Academic Supervisor
+
+**Pr. Latifa RASSAM**
+
+---
+
+# 📸 Screenshots
+
+*Add your application screenshots here*
+
+```md
+![Home Screen](assets/screens/home.png)
+![Quiz Screen](assets/screens/quiz.png)
+```
+
+---
+
+# 🔮 Future Improvements
+
+* 🌍 Multiplayer language battles
+* 🧑‍🏫 AI conversation tutor
+* 🥽 VR/AR immersive learning
+* 📊 Advanced analytics dashboard
+* 🧠 Personalized AI learning paths
+
+---
+
+# 📄 License
+
+This project was developed for educational purposes at ENSIAS Taroudant.
+
+---
+
+
