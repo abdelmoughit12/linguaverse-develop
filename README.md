@@ -2,14 +2,7 @@
 
 ### Learn Languages Smarter with AI, Gamification & Real-Time Interaction
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Flutter-3.22+-02569B?style=for-the-badge&logo=flutter" />
-  <img src="https://img.shields.io/badge/Dart-3.x-0175C2?style=for-the-badge&logo=dart" />
-  <img src="https://img.shields.io/badge/Firebase-Backend-FFCA28?style=for-the-badge&logo=firebase" />
-  <img src="https://img.shields.io/badge/Gemini-AI%20Powered-8E75FF?style=for-the-badge" />
-</p>
 
----
 
 ## 📱 About The Project
 
@@ -259,35 +252,16 @@ main
 
 ---
 
-# 📋 Development Rules
 
-✅ Conventional commits only
-
-```bash
-feat(auth): add login validation
-fix(quiz): correct timer bug
-```
-
-✅ Always branch from `develop`
-
-✅ Rebase before Pull Request
-
-❌ Never commit:
-
-* `.env`
-* `google-services.json`
-* `GoogleService-Info.plist`
-
----
 
 # 👨‍💻 Team
 
-| Member               | Role                     |
-| -------------------- | ------------------------ |
-| Hiba EL OUAFI        | Authentication & AI      |
-| Zineb BOUGHEDDA      | Lessons & Gamification   |
-| Abdelmoughit MOURADI | Quiz & Firebase          |
-| Achraf MOUASIS       | Audio & Machine Learning |
+| Member               | 
+| -------------------- | 
+| Hiba EL OUAFI        | 
+| Zineb BOUGHEDDA      | 
+| Abdelmoughit MOURADI | 
+| Achraf MOUASIS       | 
 
 ### Academic Supervisor
 
@@ -295,16 +269,9 @@ fix(quiz): correct timer bug
 
 ---
 
-# 📸 Screenshots
 
-*Add your application screenshots here*
 
-```md
-![Home Screen](assets/screens/home.png)
-![Quiz Screen](assets/screens/quiz.png)
-```
 
----
 
 # 🔮 Future Improvements
 
@@ -321,5 +288,4 @@ fix(quiz): correct timer bug
 This project was developed for educational purposes at ENSIAS Taroudant.
 
 ---
-
 
