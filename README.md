@@ -3,7 +3,6 @@
 ### Learn Languages Smarter with AI, Gamification & Real-Time Interaction
 
 
-
 ## 📱 About The Project
 
 **LinguaVerse** is an AI-powered mobile application designed to make language learning more interactive, immersive, and engaging.
